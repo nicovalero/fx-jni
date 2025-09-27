@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
@@ -97,6 +98,35 @@ public class WindowDecoration extends AbstractDecoration {
         // Call the constructor of the parent class (likely a custom class that extends from AnchorPane)
         // and pass the provided Stage and showInTaskBar flag to it.
         super(stage, showInTaskBar);
+        header = new HBox();
+        hLeft = new HBox();
+        icon = new ImageView();
+        title = new Label();
+        hRight = new HBox();
+        minBtn = new Button();
+        minSvg = new SVGPath();
+        maxBtn = new Button();
+        maxSvg = new SVGPath();
+        closeBtn = new Button();
+        closeSvg = new SVGPath();
+        container = new AnchorPane();
+        spots = new ArrayList<>();
+
+        // Call the initialize() method to further set up the UI elements
+        initialize();
+    }
+
+    /**
+     * Constructor for the WindowDecoration class.
+     *
+     * @param stage The JavaFX Stage object associated with the window.
+     * @param showInTaskBar Indicates whether the window should be shown in the taskbar.
+     * @param content Content inside the window.
+     */
+    public WindowDecoration(Stage stage, boolean showInTaskBar, Pane content) {
+        // Call the constructor of the parent class (likely a custom class that extends from AnchorPane)
+        // and pass the provided Stage and showInTaskBar flag to it.
+        super(stage, showInTaskBar, content);
         header = new HBox();
         hLeft = new HBox();
         icon = new ImageView();
