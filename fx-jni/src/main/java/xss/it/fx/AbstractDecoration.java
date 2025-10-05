@@ -10,6 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import xss.it.fx.helpers.AnchorMeasurements;
 import xss.it.fx.helpers.CornerPreference;
 import xss.it.fx.helpers.HitSpot;
 import xss.it.fx.helpers.State;
@@ -86,12 +87,12 @@ public abstract class AbstractDecoration extends AnchorPane {
      * @param stage         The Stage associated with the AbstractDecoration.
      * @param showInTaskBar Initial value indicating whether the window should be shown in the taskbar.
      */
-    public AbstractDecoration(Stage stage, boolean showInTaskBar, Pane content){
+    public AbstractDecoration(Stage stage, boolean showInTaskBar, Pane content, AnchorMeasurements anchors){
         this.getChildren().add(content);
-        AnchorPane.setTopAnchor(content, 50.0);
-        AnchorPane.setLeftAnchor(content, 0.0);
-        AnchorPane.setRightAnchor(content, 0.0);
-        AnchorPane.setBottomAnchor(content, 0.0);
+        AnchorPane.setTopAnchor(content, anchors.top);
+        AnchorPane.setLeftAnchor(content, anchors.left);
+        AnchorPane.setRightAnchor(content, anchors.right);
+        AnchorPane.setBottomAnchor(content, anchors.bottom);
         this.stage= stage;
         this.setShowInTaskBar(showInTaskBar);
         initialize();
