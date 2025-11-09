@@ -126,7 +126,7 @@ public class WindowDecoration extends AbstractDecoration {
     public WindowDecoration(Stage stage, boolean showInTaskBar, Pane content) {
         // Call the constructor of the parent class (likely a custom class that extends from AnchorPane)
         // and pass the provided Stage and showInTaskBar flag to it.
-        super(stage, showInTaskBar, content);
+        super(stage, showInTaskBar);
         header = new HBox();
         hLeft = new HBox();
         icon = new ImageView();
