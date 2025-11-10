@@ -23,6 +23,7 @@ dependencies {
 
 jar{
     archiveBaseName ='fx-jni'
+    from sourceSets.main.output
     manifest {
         attributes(
                 'name' : 'fx-jni',
